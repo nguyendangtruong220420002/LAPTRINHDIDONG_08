@@ -1,18 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, TextInput, View, Image } from 'react-native';
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
 
 const Trang1 =( {navigation} ) => {
+const [email, setEmail]= useState('');
+
   return (
     <View style={styles.container}>
       <Image style={styles.img}
       source={require('./../IMG/book.png')}></Image>
-      <Text style={styles.t1}>MANAGE YOUR TASK</Text>
+      {console.log('body')}
+      <Text style={styles.t1}>MANAGE YOURTASK</Text>
+      <Text style={styles.t1}>email: {email}</Text>
       <TextInput style={styles.input}
-      placeholder='Email'></TextInput>
+      placeholder='Email'
+      onChangeText={setEmail}
+      value={email}></TextInput>
       <Pressable style={styles.b1} 
-      onPress={()=> navigation.navigate('Trang2')}>
+      onPress={()=> navigation.navigate('Trang2',{ email: email }) }>
           <Text style={styles.t2}>GET</Text>
       </Pressable>
     </View>

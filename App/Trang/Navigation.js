@@ -1,15 +1,18 @@
 import { Text, View } from 'react-native';
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { NavigationContainer, useRoute } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Trang1 from './Trang1';
 import Trang2 from './Trang2';
 import Trang3 from './Trang3';
 
 function Use(){
+  const route = useRoute();
+  const {email} = route.params;
   return(
     <View>
-      <Text style={{ color :'red' , left:'100px'}}> haha</Text>
+      <Image></Image>
+      <Text style={{ color :'red' , left:'100px'}}> use :{email}</Text>
     </View>
   );
 }

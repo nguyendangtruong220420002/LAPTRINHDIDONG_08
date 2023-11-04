@@ -11,7 +11,7 @@ function Use(){
   const {email} = route.params;
   return(
     <View>
-      <Image></Image>
+      
       <Text style={{ color :'red' , left:'100px'}}> use :{email}</Text>
     </View>
   );

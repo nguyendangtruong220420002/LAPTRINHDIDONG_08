@@ -6,13 +6,14 @@ const url = "https://6544e42e5a0b4b04436d29bc.mockapi.io/Todo/Todo";
 
 const Trang2 =( {navigation})=> {
   const [data, setData] = useState([]);
-useEffect(()=>{
+  useEffect(()=>{
   fetch(url)
     .then(Res => Res.json())
     .then(json =>{
       setData(json)
+
     })
-},[]);
+  },[]);
   return (
     <View style={styles.container}>
       {

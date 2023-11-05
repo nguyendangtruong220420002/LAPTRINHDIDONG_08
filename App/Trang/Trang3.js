@@ -1,15 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { Pressable, StyleSheet, Text, TextInput, View, Image } from 'react-native';
-import React from 'react';
-const Trang3 =() => {
+import React, { useEffect, useState } from 'react';
+const url = "https://6544e42e5a0b4b04436d29bc.mockapi.io/Todo/Todo";
+
+
+const Trang3 =( {navigation})=> {
+  const [data, setData] = useState([]);
+  useEffect(()=>{
+  fetch(url)
+    .then(Res => Res.json())
+    .then(json =>{
+      setData(json)
+
+    })
+  },[]);
   return (
     <View style={styles.container}>
-      <Image style={styles.img}
-      source={require('./../IMG/book.png')}></Image>
-      <Text style={styles.t1}>MANAGE YOUR TASK</Text>
-      <TextInput style={styles.input}
-      placeholder='Email'></TextInput>
-      <Pressable style={styles.b1} >
+      {
+        data.map((item)  =>{
+          return (
+            <Text style={styles.t1}> Job : {item.jos}</Text>
+          );
+        })
+      }
+      
+      <Pressable style={styles.b1} 
+      onPress={()=> navigation.navigate('Trang3') }
+      >
           <Text style={styles.t2}>GET</Text>
       </Pressable>
     </View>
@@ -18,33 +35,8 @@ const Trang3 =() => {
 
 const styles = StyleSheet.create({
   container: {
-  
-  },
-  img:{
-    resizeMode:'contain',
-    width:300,
-    height:300,
-    top:30,
-    left:45
-  },
-  t1:{
-    width:380,
-    height:50,
-    fontSize:30,
-    color:'blue',
-    top:50,
-    left:50,
-    fontWeight:'bold'
+  backgroundColor:'red'
    
-  },
-  input:{
-    width:320,
-    height:40,
-    borderRadius:5,
-    borderColor:'red',
-    borderWidth:"1px",
-    marginTop:100,
-    marginLeft:30
   },
   b1:{
     width:200,
@@ -61,7 +53,6 @@ const styles = StyleSheet.create({
     textAlign:'center',
     top:10,
     
-   
   }
 });
 export default Trang3;

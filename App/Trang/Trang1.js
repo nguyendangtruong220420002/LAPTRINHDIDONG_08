@@ -45,7 +45,7 @@ const [data, setData] = useState([]);
         if(useData){
           navigation.navigate('Trang2', {data: useData});
         } else{
-
+          
         }
       }}
       >

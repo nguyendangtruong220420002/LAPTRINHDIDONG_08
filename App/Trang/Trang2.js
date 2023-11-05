@@ -1,11 +1,12 @@
 import { Pressable, StyleSheet, Text, TextInput, View, Image } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React  from 'react';
 import { useRoute } from '@react-navigation/native';
 const url = "https://6544e42e5a0b4b04436d29bc.mockapi.io/Todo/Todo";
 
 
 const Trang2 =( {navigation})=> {
-  
+    const route = useRoute();
+    const {data} = route.params;
   
   return (
     <View style={styles.container}>
@@ -16,7 +17,7 @@ const Trang2 =( {navigation})=> {
         <Text style={{backgroundColor:'#d9d9d9', borderRadius:'20px',
                      width:'330px', height:'40px', padding:'8px', 
                      fontSize:'18px', fontWeight:'bold',
-                     left:'20px', }}>Check in</Text>
+                     left:'20px', }}>{data.jos}</Text>
       </View>
       <Pressable style={styles.b1} 
       onPress={()=> navigation.navigate('Trang3')}

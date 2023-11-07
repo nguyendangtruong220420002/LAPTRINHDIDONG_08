@@ -31,7 +31,7 @@ const Navigation =()=> {
         <Stack.Navigator>
             <Stack.Screen name='Trang1' component={Trang1}></Stack.Screen>
             <Stack.Screen name='Trang2' component={Trang2} options={()=>({headerTitle: ()=><Use></Use>})}></Stack.Screen>
-            <Stack.Screen name='Trang3' component={Trang3}></Stack.Screen>
+            <Stack.Screen name='Trang3' component={Trang3}  options={()=>({headerTitle: ()=><Use></Use>})}></Stack.Screen>
         </Stack.Navigator>
     </NavigationContainer>
   );

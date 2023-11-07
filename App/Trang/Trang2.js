@@ -1,5 +1,5 @@
-import { Pressable, StyleSheet, Text, TextInput, View, Image } from 'react-native';
-import React  from 'react';
+import { Pressable, StyleSheet, Text, TextInput, View,  } from 'react-native';
+import React, { useState }  from 'react';
 import { useRoute } from '@react-navigation/native';
 const url = "https://6544e42e5a0b4b04436d29bc.mockapi.io/Todo/Todo";
 
@@ -7,17 +7,16 @@ const url = "https://6544e42e5a0b4b04436d29bc.mockapi.io/Todo/Todo";
 const Trang2 =( {navigation})=> {
     const route = useRoute();
     const {data} = route.params;
-  
+    
   return (
     <View style={styles.container}>
       <TextInput style={styles.input}
                   placeholder='Search'
       ></TextInput>
       <View style={{margin:'10px', top:'40px'}}>
-        <Text style={{backgroundColor:'#d9d9d9', borderRadius:'20px',
-                     width:'330px', height:'40px', padding:'8px', 
-                     fontSize:'18px', fontWeight:'bold',
-                     left:'20px', }}>{data.jos}</Text>
+        <Text style={styles.textjos}>{data.jos1}</Text>
+        <Text style={styles.textjos}>{data.jos2}</Text>
+        <Text style={styles.textjos}>{data.jos3}</Text>
       </View>
       <Pressable style={styles.b1} 
       onPress={()=> navigation.navigate('Trang3')}
@@ -31,6 +30,9 @@ const Trang2 =( {navigation})=> {
 const styles = StyleSheet.create({
   container: {
   
+  },
+  checkbox: {
+    alignSelf: 'center',
   },
   b1:{
     width:80,
@@ -57,5 +59,16 @@ const styles = StyleSheet.create({
     padding:10,
     fontSize:15
   },
+  textjos:{
+    backgroundColor:'#d9d9d9', 
+    borderRadius:'20px',
+    width:'330px',
+    height:'40px',
+    marginTop:'20px',
+    padding:'8px', 
+    fontSize:'18px', 
+    fontWeight:'bold',
+    left:'20px',
+  }
 });
 export default Trang2;

@@ -27,17 +27,17 @@ const Trang1 =( {navigation} ) => {
                     onChangeText={setEmail}
                     value={email}>
             </TextInput>
-          <Pressable style={styles.b1} 
-                    //onPress={()=> navigation.navigate('Trang2',{email: email}) }
+      <Pressable style={styles.b1} 
                     onPress={()=>{
                     const useData = data.find((item)=> item.use === email);
                     if(useData){
                     navigation.navigate('Trang2', {data: useData});
                     } else{
+                      
                     }
                   }}>
                   <Text style={styles.t2}>GET</Text>
-          </Pressable>
+      </Pressable>
     </View>
   );
 }

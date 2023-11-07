@@ -1,31 +1,14 @@
 
 import { Pressable, StyleSheet, Text, TextInput, View, Image } from 'react-native';
 import React, { useEffect, useState } from 'react';
-const url = "https://6544e42e5a0b4b04436d29bc.mockapi.io/Todo/Todo";
+import { useRoute } from '@react-navigation/native';
 
 
 const Trang3 =( {navigation})=> {
-  const [data, setData] = useState([]);
-  useEffect(()=>{
-  fetch(url)
-    .then(Res => Res.json())
-    .then(json =>{
-      setData(json)
-
-    })
-  },[]);
   return (
     <View style={styles.container}>
-      {
-        data.map((item)  =>{
-          return (
-            <Text style={styles.t1}> Job : {item.jos}</Text>
-          );
-        })
-      }
-      
       <Pressable style={styles.b1} 
-      onPress={()=> navigation.navigate('Trang3') }
+      onPress={()=> navigation.navigate('Trang2') }
       >
           <Text style={styles.t2}>GET</Text>
       </Pressable>

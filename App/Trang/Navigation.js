@@ -9,6 +9,7 @@ import Trang3 from './Trang3';
 function Use(){
   const route = useRoute();
   const {data} = route.params;
+  console.log(data); 
   return(
     <View style={{flexDirection:'row', }}>
       <Image
@@ -30,8 +31,8 @@ const Navigation =()=> {
     <NavigationContainer>
         <Stack.Navigator>
             <Stack.Screen name='Trang1' component={Trang1}></Stack.Screen>
-            <Stack.Screen name='Trang2' component={Trang2} options={()=>({headerTitle: ()=><Use></Use>})}></Stack.Screen>
-            <Stack.Screen name='Trang3' component={Trang3}  options={()=>({headerTitle: ()=><Use></Use>})}></Stack.Screen>
+            <Stack.Screen name='Trang2' component={Trang2} options={()=>({headerTitle: ()=><Use> </Use>})}></Stack.Screen>
+            <Stack.Screen name='Trang3' component={Trang3} options={()=>({headerTitle: ()=><Use> </Use>})}></Stack.Screen>
         </Stack.Navigator>
     </NavigationContainer>
   );
